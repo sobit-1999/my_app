@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
    <BrowserRouter>
+   <h1>Hello</h1>
     <Routes >
     <Route path='/' element={<Api />} />
       {data.map((item, i) => {return  <Route path={'/test'+i} key={i} element={<Test data={item} index={i}/>} />
