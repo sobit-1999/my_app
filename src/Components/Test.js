@@ -41,15 +41,18 @@ export default function Test({data, index}) {
   };
 
   return (
-    <FormControl sx={{ m: 3 }} variant="standard">
+    <FormControl
+    className='test-container'
+    sx={{ m: 3 }} variant="standard">
+        <h3>Category: {data.category}</h3>
         <Header click={setError}  value={setValue}/>
         <h4 >{data.question}</h4>  
        <Link to='/result'> <Button >result</Button></Link>
         {answer[index] ? 
         <> <RadioGroup
+        className='test'
         name="quiz"
         value={answer[index].my_answer}
-        onChange={handleRadioChange}
       >
           { answer[index].test.map((item, i)=> {
          return   <OptionAnswer
@@ -71,9 +74,12 @@ export default function Test({data, index}) {
               setValue('')
             }}
             >
-              {index}
+              {index}1
             </Button>
             </Link>
+            <Button className='check1' >
+          Check1
+        </Button>
             <Link to={'/test'+(index+1)}> 
             <Button 
             onClick={() => {
@@ -81,7 +87,7 @@ export default function Test({data, index}) {
               setValue('')
             }}
             sx={{ mt: 1, mr: 1 }}>
-              {index+2}
+              {index+2}1
             </Button>
             </Link>
             </Box>
@@ -90,6 +96,7 @@ export default function Test({data, index}) {
         :
        <> <RadioGroup
           name="quiz"
+          className='test'
           value={value}
           onChange={handleRadioChange}
         >
@@ -106,9 +113,17 @@ export default function Test({data, index}) {
             <Box sx={{
               display: 'flex'
             }}>
-          { value==='' ? '':<Button onClick={answerFunction} sx={{ mt: 1, mr: 1 }} >
-          Check Answer
-        </Button>}
+          { value==='' ?
+          ''
+        
+        :
+        <>
+        <Button  className='check2' onClick={answerFunction}  >
+          Check2 
+        </Button>
+        </>
+        
+        }
         </Box>
             </> }
       </FormControl>
