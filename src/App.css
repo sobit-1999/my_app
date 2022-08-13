@@ -1,4 +1,24 @@
 .App {
   text-align: center;
-  margin-top: 100px;
+  margin: 100px;
+}
+.test {
+  text-align-last: left;
+}
+
+.header{
+  display: flex;
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+.result{
+  background-color: black;
+  color: aliceblue;
 }

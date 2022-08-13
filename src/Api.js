@@ -2,26 +2,19 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom'
 import { Button, TextField } from '@mui/material';
 import { useSelector, useDispatch } from "react-redux";
-import { editAmountValue, editCategoryValue } from './redux/testsSlice';
-
-// https://opentdb.com/api.php?amount=10&category=32
-// https://opentdb.com/api.php?amount=10&category=28
-
+import { addDataTests, editAmountValue, editCategoryValue } from './redux/testsSlice';
 
 const Api = () => {
     const dispatch = useDispatch()
 
-    const [data, setData] = useState([]);
-    // const [age, setAge] = React.useState('');
     const amount = useSelector((state) => state.test.amountTest);
     const age = useSelector((state) => state.test.categoryTest);
 
-
-console.log(amount);
     const categoryApi = [ 
 'General Knowledge', 
 'Entertainment: Books', 
@@ -52,19 +45,11 @@ console.log(amount);
 useEffect(() => {
     
     axios.get(`https://opentdb.com/api.php?amount=${amount}&category=${age+9}`)
-    .then(resp => {
-        setData(resp)
-    })
+    .then(resp => dispatch(addDataTests(resp)))
     .catch(err => {
-        console.error(err);
+        console.error(err, 'Error');
     });
 }, [ age, amount ])
-
-const StartFunction = () => {
-    
-    console.log(age, amount);
-    console.log(data);
-}
 
     return (
       <div className="App">
@@ -92,11 +77,9 @@ const StartFunction = () => {
         >
         </TextField> 
         <br />
-        <Button onClick={StartFunction}>START</Button>
+       <Link to='/test0'> <Button>START</Button></Link>
 
        </div>
     );
   }
-// }
-
 export default Api;

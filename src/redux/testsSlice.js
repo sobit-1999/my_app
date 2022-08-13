@@ -6,12 +6,15 @@ export const testSlice = createSlice({
   initialState: {
     dataTests: [],
     categoryTest: '',
-    amountTest: 10
+    amountTest: 10,
+    answers: [],
+    dataIndex: 0
    },
   reducers: {
 
     addDataTests: (state, action ) => {
-        state.dataTests=action.payload
+        state.dataTests=(action.payload.data.results)
+        console.log(state.dataTests.length);
     },
 
     editAmountValue: ( state, action ) => {
@@ -19,26 +22,25 @@ export const testSlice = createSlice({
     },
     editCategoryValue: ( state, action ) => {
         state.categoryTest = action.payload
+    },
+    answersPush: (state, action ) => {
+      state.answers[state.dataIndex]=action.payload
+      console.log(state.dataIndex);
+
+      
+    },
+    editDataIndex: (state, action ) => {
+      state.dataIndex=action.payload
     }
-
-    // deleteMijoz: (state, action ) => {
-    //   const idxTask = state.afitsantName[state.index].mijozlar.findIndex(
-    //     (task) => task.orni === action.payload
-    //   )
-
-    //   const idxTask2 = state.afitsantName[state.index].mijozlar[state.indexMijoz].buyurtma.findIndex(
-    //     (e) => e.id === action.payload
-    //   ) 
-    //   state.afitsantName[state.index].mijozlar.splice(idxTask, 1)
-    //   console.log(state.index, idxTask, idxTask2);
-    //  },
-
   }
 });
 
 export const {
     editAmountValue,
-    editCategoryValue
+    editCategoryValue,
+    addDataTests,
+    answersPush,
+    editDataIndex
 } = testSlice.actions;
 
 export default testSlice.reducer;
