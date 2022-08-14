@@ -6,7 +6,7 @@ export const testSlice = createSlice({
   initialState: {
     dataTests: [],
     categoryTest: null,
-    amountTest: 10,
+    amountTest: 5,
     answers: [],
     dataIndex: 0
    },
@@ -27,6 +27,7 @@ export const testSlice = createSlice({
     },
     answersDelete: (state, action ) => {
       state.answers=[]
+      state.amountTest=5
     },
     editDataIndex: (state, action ) => {
       state.dataIndex=action.payload
