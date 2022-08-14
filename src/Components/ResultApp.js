@@ -12,7 +12,6 @@ export default function ResultApp({ opacity, setOpacity }) {
     if (answer[i] && answer[i].my_answer === answer[i].correct) {
       result.push("1");
     }
-    // console.log(answer[i].correct);
     console.log(answer);
   }
   return (
@@ -30,11 +29,11 @@ export default function ResultApp({ opacity, setOpacity }) {
       </div>
       <h2>{(result.length / data.length) * 100} %</h2>
       <Link to="/test0">
-        <Button sx={{ marginTop: 2 }} onClick={() => setOpacity(false)}>
+        <Button sx={{ margin: 2, border: '2px solid orange' }} onClick={() => setOpacity(false)}>
           Ok
         </Button>
         <Link to="/">
-          <Button sx={{ marginTop: 2 }}> Go home</Button>
+          <Button sx={{ margin: 2, border: '2px solid red' }}> Go home</Button>
         </Link>
       </Link>
     </Box>

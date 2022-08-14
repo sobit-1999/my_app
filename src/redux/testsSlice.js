@@ -5,7 +5,7 @@ export const testSlice = createSlice({
   name: "test",
   initialState: {
     dataTests: [],
-    categoryTest: '',
+    categoryTest: null,
     amountTest: 10,
     answers: [],
     dataIndex: 0
@@ -14,7 +14,6 @@ export const testSlice = createSlice({
 
     addDataTests: (state, action ) => {
         state.dataTests=(action.payload.data.results)
-        console.log(state.dataTests.length);
     },
 
     editAmountValue: ( state, action ) => {
@@ -25,12 +24,15 @@ export const testSlice = createSlice({
     },
     answersPush: (state, action ) => {
       state.answers[state.dataIndex]=action.payload
-      console.log(state.answers);
-
-      
     },
     editDataIndex: (state, action ) => {
       state.dataIndex=action.payload
+    },
+    incrementAmount: (state, action) => {
+      state.amountTest += 1  
+    },
+    decrementAmount: (state, action) => {
+      state.amountTest -= 1  
     }
   }
 });
@@ -40,7 +42,9 @@ export const {
     editCategoryValue,
     addDataTests,
     answersPush,
-    editDataIndex
+    editDataIndex,
+    incrementAmount,
+    decrementAmount
 } = testSlice.actions;
 
 export default testSlice.reducer;

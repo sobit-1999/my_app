@@ -1,8 +1,7 @@
 import { FormControlLabel, Radio } from "@mui/material";
 import React from "react";
 
-export default function OptionAnswer({ answers, item, correct, clickOption }) {
-  // console.log(item);
+export default function OptionAnswer({  item, correct, clickOption }) {
   return (
     <div>
       <FormControlLabel
