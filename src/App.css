@@ -53,7 +53,7 @@ margin: 10px;
   position: relative;
  max-width: 600px;
  min-width: 300px;
-  background-color: rgb(206, 213, 188);
+  background-color: rgb(134, 196, 232);
   margin: 5%;
   text-align: center;
   border-radius: 20px;
@@ -118,16 +118,15 @@ input {
 
 .finish{
   display: flex;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
-  margin: 20px 0 0 30px;
+  margin: 40px 0 0 30px;
 }
 
 .finish >button{
 padding: 10px 20px;
 border-radius: 10px;
-background-color: red;
-color: rgb(85, 205, 85);
+background-color: rgb(214, 104, 104);
 }
 
 .result-container{
