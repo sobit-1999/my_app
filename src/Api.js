@@ -45,6 +45,9 @@ const Api = () => {
     "Entertainment: Japanese Anime & Manga",
     "Entertainment: Carton & Animation",
   ];
+
+  const amountDates = [5,10, 15, 20,25,  30,35, 40,45,  50]
+
   useEffect(() => {
     axios
     .get(`https://opentdb.com/api.php?amount=${amount}&category=${age*1+9}`)
@@ -72,13 +75,17 @@ const Api = () => {
         </select>
       </FormControl>
       <h3>Number Of Questions</h3>
-      <input
-        sx={{ m: 1, minWidth: 300 }}
-        value={amount}
-        onChange={(e) => dispatch(editAmountValue(e.target.value))}
-        type="number"
-      /><button onClick={(e) => dispatch(incrementAmount())}> + </button>
-      <button  onClick={(e) => dispatch(decrementAmount())}> - </button>
+        <select
+          onChange={(e) => dispatch(editAmountValue(e.target.value))}
+        >
+          {amountDates.map((item) => {
+            return (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            );
+          })}
+        </select>
       <br />
       <Link to="/test0">
         <button className="start">START</button>

@@ -69,6 +69,7 @@ export default function Test({ data, index }) {
               return (
                 <OptionAnswer
                   i={i}
+                  key={i}
                   item={item}
                   correct={answer[index].correct}
                   clickOption={answer[index].my_answer}

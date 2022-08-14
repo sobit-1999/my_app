@@ -97,13 +97,6 @@ h2{
   padding: 20px;
 }
 
-.api > button{
-width: 40px;
-height: 40px;
-margin-left: 5px;
-margin-bottom: 8px;
-font-size: 25px;
-}
 select, input{
   padding: 10px;
   border-radius: 5px;

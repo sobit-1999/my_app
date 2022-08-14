@@ -27,12 +27,6 @@ export const testSlice = createSlice({
     },
     editDataIndex: (state, action ) => {
       state.dataIndex=action.payload
-    },
-    incrementAmount: (state, action) => {
-      state.amountTest += 1  
-    },
-    decrementAmount: (state, action) => {
-      state.amountTest -= 1  
     }
   }
 });
@@ -42,9 +36,7 @@ export const {
     editCategoryValue,
     addDataTests,
     answersPush,
-    editDataIndex,
-    incrementAmount,
-    decrementAmount
+    editDataIndex
 } = testSlice.actions;
 
 export default testSlice.reducer;
