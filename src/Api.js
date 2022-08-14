@@ -9,6 +9,8 @@ import {
   addDataTests,
   editAmountValue,
   editCategoryValue,
+  incrementAmount,
+  decrementAmount
 } from "./redux/testsSlice";
 
 const Api = () => {
@@ -43,28 +45,22 @@ const Api = () => {
     "Entertainment: Japanese Anime & Manga",
     "Entertainment: Carton & Animation",
   ];
-
   useEffect(() => {
     axios
-      .get(`https://opentdb.com/api.php?amount=${amount}&category=${age + 9}`)
-      .then((resp) => dispatch(addDataTests(resp)))
-      .catch((err) => {
-        console.error(err, "Error");
-      });
+    .get(`https://opentdb.com/api.php?amount=${amount}&category=${age*1+9}`)
+    .then((resp) => dispatch(addDataTests(resp)))
+    .catch((err) => {
+      console.error(err, "Error");
+    });
+    console.log(age+9);
   }, [age, amount]);
 
   return (
-    <div className="App">
+    <div className="api">
       <FormControl sx={{ m: 1, minWidth: 300 }}>
-        {/* <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel> */}
+      <h3>Category</h3>
         <select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select-autowidth"
-          value={age}
           onChange={(e) => dispatch(editCategoryValue(e.target.value))}
-          autoWidth
-          label="Age"
-          defaultValue={1}
         >
           {categoryApi.map((item, i) => {
             return (
@@ -75,12 +71,14 @@ const Api = () => {
           })}
         </select>
       </FormControl>
+      <h3>Number Of Questions</h3>
       <input
         sx={{ m: 1, minWidth: 300 }}
         value={amount}
         onChange={(e) => dispatch(editAmountValue(e.target.value))}
         type="number"
-      ></input>
+      /><button onClick={(e) => dispatch(incrementAmount())}> + </button>
+      <button  onClick={(e) => dispatch(decrementAmount())}> - </button>
       <br />
       <Link to="/test0">
         <button className="start">START</button>
