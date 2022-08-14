@@ -25,6 +25,9 @@ export const testSlice = createSlice({
     answersPush: (state, action ) => {
       state.answers[state.dataIndex]=action.payload
     },
+    answersDelete: (state, action ) => {
+      state.answers=[]
+    },
     editDataIndex: (state, action ) => {
       state.dataIndex=action.payload
     }
@@ -36,7 +39,9 @@ export const {
     editCategoryValue,
     addDataTests,
     answersPush,
-    editDataIndex
+    editDataIndex,
+    answersDelete
+
 } = testSlice.actions;
 
 export default testSlice.reducer;

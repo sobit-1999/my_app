@@ -56,7 +56,7 @@ export default function Test({ data, index }) {
       </div>
       <h3>Category: {data.category}</h3>
       <Header click={setError} value={setValue} />
-      <h4>{data.question}</h4>
+      <h4><span>{index+1}-question: </span> {data.question}</h4>
       <h2>Option</h2>
       {answer[index] ? (
         <>
