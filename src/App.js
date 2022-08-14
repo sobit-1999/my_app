@@ -1,23 +1,29 @@
- import './App.css';
-import Api from './Api';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Test from './Components/Test';
-import ResultApp from './Components/ResultApp';
+import "./App.css";
+import Api from "./Api";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Test from "./Components/Test";
+import ResultApp from "./Components/ResultApp";
 
 function App() {
-  const data = useSelector((state ) => state.test.dataTests)
+  const data = useSelector((state) => state.test.dataTests);
   return (
     <div className="App">
-   <BrowserRouter>
-   <h1>Hello</h1>
-    <Routes >
-    <Route path='/' element={<Api />} />
-      {data.map((item, i) => {return  <Route path={'/test'+i} key={i} element={<Test data={item} index={i}/>} />
-      })}
-      <Route path='/result' element={<ResultApp />} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Api />} />
+          {data.map((item, i) => {
+            return (
+              <Route
+                path={"/test" + i}
+                key={i}
+                element={<Test data={item} index={i} />}
+              />
+            );
+          })}
+          <Route path="/result" element={<ResultApp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

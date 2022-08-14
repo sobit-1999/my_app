@@ -25,7 +25,7 @@ export const testSlice = createSlice({
     },
     answersPush: (state, action ) => {
       state.answers[state.dataIndex]=action.payload
-      console.log(state.dataIndex);
+      console.log(state.answers);
 
       
     },

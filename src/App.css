@@ -3,12 +3,11 @@
   margin: 0;
   padding: 0;
   font-family:  sans-serif;
-  /* font-size: 20px; */
 }
 
 .App {
   text-align: center;
-  /* margin: 100px; */
+  padding-top: 50px;
 }
 .test {
   text-align: left;
@@ -22,13 +21,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  /* background-color: aquamarine; */
 }
 .test-number {
   width: 50px;
   height: 50px;
   border-radius: 20%;
-  margin: 2px;
+  margin: 4px;
   color: black;
   display: flex;
   justify-content: center;
@@ -42,18 +40,25 @@ a{
   color: black;
 }
 .result{
-  background-color: black;
-  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.result>h1{
+margin: 10px;
 }
 .test-container{
+  position: relative;
  max-width: 600px;
  min-width: 300px;
- /* width: 100%; */
-  background-color: rgb(112, 173, 173);
+  background-color: rgb(206, 213, 188);
   margin: 5%;
   text-align: center;
   border-radius: 20px;
-  transition: 5s;
+  transition: 2s;
+  padding: 15px;
 
 }
 h3{
@@ -62,19 +67,78 @@ h3{
 h4{
   margin: 20px;
 }
-
-.next2 .check2{
-  padding: 5px;
-  background-color: rgb(211, 189, 161);
-  color: black;
+h2{
+  margin-bottom: 15px;
 }
-
-.next1 .check1{
+.check2{
+  padding: 5px;
   background-color: blue;
   color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  margin: 10px;
 }
-/* button{
-  background-color: aqua;
-} */
+
+.check1{
+  background-color: rgb(116, 116, 185);
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0.2;
+  font-size: 25px;
+  margin: 10px;
+}
 
 
+.buttons{
+  padding: 20px;
+}
+
+select, input{
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 300px;
+}
+input {
+  /* width: 100px; */
+  margin-top: 8px;
+}
+
+.start{
+  padding: 10px 20px;
+  background-color: rgb(81, 81, 182);
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.finish{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin: 20px 0 0 30px;
+}
+
+.finish >button{
+padding: 10px 20px;
+border-radius: 10px;
+background-color: red;
+color: rgb(85, 205, 85);
+}
+
+.result-container{
+  background-color: black;
+  color: aliceblue;
+  padding: 50px;
+  text-align: center;
+  border-radius: 15px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+}
