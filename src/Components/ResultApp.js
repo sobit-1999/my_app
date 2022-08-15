@@ -29,7 +29,7 @@ export default function ResultApp({ opacity, setOpacity }) {
         <h1>/</h1>
         <h2 style={{ marginBottom: -3 }}>{data.length}</h2>
       </div>
-      <h2>{(result.length / data.length) * 100} %</h2>
+      <h2>{((result.length / data.length) * 100).toFixed(0)}  %</h2>
       <Link to="/test0">
         <Button sx={{ margin: 2, border: '2px solid orange' }} onClick={() => setOpacity(false)}>
           Ok
